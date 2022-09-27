@@ -1,5 +1,6 @@
 package io.javabrains.reactiveworkshop;
 
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
 /**
@@ -15,8 +16,11 @@ public class StreamSources {
     }
 
     public static Stream<Integer> intNumbersStream() {
-        return Stream.iterate(0, i -> i + 2)
+        int min = 0, max = 25;
+        return Stream.iterate(0, i -> ThreadLocalRandom.current().nextInt(min, max + 1))
                 .limit(10);
+//        return Stream.iterate(0, i -> i + 2)
+//                .limit(10);
     }
 
     public static Stream<User> userStream() {
