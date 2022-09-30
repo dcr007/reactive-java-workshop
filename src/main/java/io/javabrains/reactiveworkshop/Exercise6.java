@@ -1,6 +1,7 @@
 package io.javabrains.reactiveworkshop;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class Exercise6 {
 
@@ -8,7 +9,7 @@ public class Exercise6 {
     public static void main(String[] args) throws IOException {
 
         // Use ReactiveSources.unresponsiveFlux() and ReactiveSources.unresponsiveMono()
-
+        String unresponsive = ReactiveSources.unresponsiveMono().block(Duration.ofSeconds(5));
         // Get the value from the Mono into a String variable but give up after 5 seconds
         // TODO: Write code here
 
