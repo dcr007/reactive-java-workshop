@@ -42,7 +42,7 @@ public class Exercise5 {
 
         public void hookOnNext(T value) {
             System.out.println(value.toString() + "received");
-            request(1); // request for more
+//            request(1); // request for more
 
         }
     }
